@@ -4,14 +4,11 @@ from sqlalchemy.ext.asyncio import (
     AsyncSession,
     create_async_engine,
     )
-from sqlalchemy.ext.declarative import declarative_base
 from sqlalchemy.orm import sessionmaker
-
-Base = declarative_base()
 
 
 def create_pool(
-    pool_size: int = 20, uri: str = 'postgresql+asyncpg://postgres:postgres@localhost:5432/nearest_trucks',
+    pool_size: int = 20, uri: str = 'postgresql+asyncpg://postgres:postgres@localhost:5432/nearest_trucks1',
 ) -> sessionmaker:
     """
     Функция принимает адрес поключение к базе данных и количество пулов.
@@ -38,4 +35,3 @@ async def get_db():
     finally:
         if session:
             await session.close()
-

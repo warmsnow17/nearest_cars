@@ -4,8 +4,9 @@ from sqlalchemy import (
     String,
     Float,
 )
+from sqlalchemy.ext.declarative import declarative_base
 
-from database import Base
+Base = declarative_base()
 
 
 class Cargo(Base):
@@ -39,6 +40,6 @@ class Location(Base):
     id = Column(Integer, primary_key=True)
     city = Column(String)
     state = Column(String)
-    zip_code = Column(String)
+    zip_code = Column(Integer)
     latitude = Column(Float)
     longitude = Column(Float)

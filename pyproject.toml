@@ -13,7 +13,10 @@ alembic = "^1.11.1"
 uvicorn = "^0.22.0"
 asyncpg = "^0.27.0"
 pandas = "^2.0.1"
-psycopg2 = "^2.9.6"
+greenlet = "^2.0.2"
+iniconf = "^0.1.9.1"
+psycopg2-binary = "^2.9.6"
+sqlalchemy = "^2.0.15"
 
 
 [build-system]
