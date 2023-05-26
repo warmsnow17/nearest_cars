@@ -19,7 +19,7 @@ git clone https://github.com/warmsnow17/nearest_cars.git
 ```
 
 1. Перейдите в директорию проекта:
- cd nearest_cars
+    cd nearest_cars
 2. Запустите Docker Compose:
- docker-compose up
+    docker-compose up
 
