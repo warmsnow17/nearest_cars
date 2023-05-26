@@ -1,10 +1,6 @@
-from sqlalchemy import (
-    Column,
-    Integer,
-    String,
-    Float,
-)
+from sqlalchemy import Column, Float, ForeignKey, Integer, String
 from sqlalchemy.ext.declarative import declarative_base
+from sqlalchemy.orm import relationship
 
 Base = declarative_base()
 
@@ -15,10 +11,12 @@ class Cargo(Base):
     __tablename__ = 'cargo'
 
     id = Column(Integer, primary_key=True)
-    pick_up_location = Column(String)
-    delivery_location = Column(String)
-    weight = Column(Integer)  # Диапазон веса должен быть проверен на уровне приложения.
+    pick_up_location_id = Column(Integer, ForeignKey('location.id'))
+    delivery_location_id = Column(Integer, ForeignKey('location.id'))
+    weight = Column(Integer)
     description = Column(String)
+    pick_up_location = relationship('Location', foreign_keys=[pick_up_location_id])
+    delivery_location = relationship('Location', foreign_keys=[delivery_location_id])
 
 
 class Truck(Base):
@@ -28,8 +26,9 @@ class Truck(Base):
 
     id = Column(Integer, primary_key=True)
     unique_number = Column(String)
-    current_location = Column(String)
-    load_capacity = Column(Integer)  # Грузоподъемность должна быть проверена на уровне приложения.
+    current_location_id = Column(Integer, ForeignKey('location.id'))
+    load_capacity = Column(Integer)
+    current_location = relationship('Location', foreign_keys=[current_location_id])
 
 
 class Location(Base):

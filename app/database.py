@@ -1,15 +1,13 @@
 """Файл содержит подключение к базе данных."""
 from sqlalchemy.engine import make_url
-from sqlalchemy.ext.asyncio import (
-    AsyncSession,
-    create_async_engine,
-    )
+from sqlalchemy.ext.asyncio import AsyncSession, create_async_engine
 from sqlalchemy.orm import sessionmaker
 
 
 def create_pool(
-    pool_size: int = 20, uri: str = 'postgresql+asyncpg://postgres:postgres@localhost:5432/nearest_trucks1',
+    pool_size: int = 20, uri: str = 'postgresql+asyncpg://postgres:postgres@db:5432/postgres',
 ) -> sessionmaker:
+
     """
     Функция принимает адрес поключение к базе данных и количество пулов.
 

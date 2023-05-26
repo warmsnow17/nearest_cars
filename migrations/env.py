@@ -17,8 +17,7 @@ logging.config.fileConfig(config.config_file_name)
 # for 'autogenerate' support
 # from myapp import mymodel
 # target_metadata = mymodel.Base.metadata
-from app.models import Cargo, Location, Truck
-from app.models import Base
+from app.models import Base, Cargo, Location, Truck
 
 target_metadata = Base.metadata
 

@@ -17,6 +17,9 @@ greenlet = "^2.0.2"
 iniconf = "^0.1.9.1"
 psycopg2-binary = "^2.9.6"
 sqlalchemy = "^2.0.15"
+pydantic = "^1.10.8"
+geopy = "^2.3.0"
+isort = "^5.12.0"
 
 
 [build-system]
